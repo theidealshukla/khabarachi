@@ -9,6 +9,21 @@ class CategoryPageManager {
     this.currentPage = 1;
     this.displayedArticles = 0;
     this.isLoading = false;
+    
+    // Debug info
+    console.log('CategoryPageManager initialized');
+    console.log('Current URL:', window.location.href);
+    console.log('Hostname:', window.location.hostname);
+    console.log('Pathname:', window.location.pathname);
+  }
+
+  // Get the correct base path for GitHub Pages
+  getBasePath() {
+    // For GitHub Pages, the pattern is: username.github.io/repository-name
+    if (window.location.hostname.includes('github.io')) {
+      return '/khabarchi';
+    }
+    return '';
   }
 
   // Get current category from URL
@@ -20,10 +35,43 @@ class CategoryPageManager {
 
   // Initialize the category page
   async init() {
+    console.log('Initializing CategoryPageManager...');
+    
+    // Test basic file access first
+    await this.testFileAccess();
+    
     await this.loadArticles();
+    console.log(`Loaded ${this.articles.length} articles`);
     this.setupEventListeners();
     this.updateYear();
     this.loadCategoryContent();
+  }
+
+  // Test file access to diagnose GitHub Pages issues
+  async testFileAccess() {
+    console.log('Testing file access...');
+    
+    const basePath = this.getBasePath();
+    const testPaths = [
+      `${basePath}/test.txt`,
+      `/test.txt`,
+      `../test.txt`,
+      `test.txt`
+    ];
+    
+    for (const path of testPaths) {
+      try {
+        const response = await fetch(path);
+        console.log(`Path '${path}': ${response.status} ${response.statusText}`);
+        if (response.ok) {
+          const content = await response.text();
+          console.log(`Success with path '${path}':`, content);
+          break;
+        }
+      } catch (error) {
+        console.log(`Path '${path}': Error -`, error.message);
+      }
+    }
   }
 
   // Load all articles from markdown files
@@ -56,15 +104,39 @@ class CategoryPageManager {
   // Load single article from markdown file
   async loadSingleArticle(filename) {
     try {
-      // Use absolute path that works both locally and on GitHub Pages
-      const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
-      const response = await fetch(`${basePath}/articles/${filename}`);
-      if (!response.ok) throw new Error(`Failed to load ${filename}`);
+      // Try multiple path strategies for GitHub Pages
+      let response;
+      let basePath = '';
+      
+      // Strategy 1: Check if we're on GitHub Pages
+      if (window.location.hostname.includes('github.io')) {
+        basePath = '/khabarachi';
+      }
+      
+      // Try the determined path first
+      try {
+        response = await fetch(`${basePath}/articles/${filename}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      } catch (firstError) {
+        console.warn(`First attempt failed with basePath '${basePath}':`, firstError.message);
+        
+        // Strategy 2: Try without basePath
+        try {
+          response = await fetch(`/articles/${filename}`);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        } catch (secondError) {
+          console.warn(`Second attempt failed:`, secondError.message);
+          
+          // Strategy 3: Try relative path
+          response = await fetch(`../articles/${filename}`);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        }
+      }
       
       const content = await response.text();
       return this.parseMarkdown(content, filename);
     } catch (error) {
-      console.warn(`Could not load article: ${filename}`, error);
+      console.error(`Could not load article: ${filename}`, error);
       return null;
     }
   }
@@ -295,7 +367,7 @@ class CategoryPageManager {
         year: 'numeric', month: 'short', day: 'numeric' 
       });
 
-      const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+      const basePath = this.getBasePath();
 
       return `
         <div class="col">
