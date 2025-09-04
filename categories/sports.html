@@ -16,40 +16,61 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <!-- Top Header with Logo -->
+  <header class="bg-white border-bottom sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold fs-4" href="../index.html">Khabarchi</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="politics.html">Politics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="business.html">Business</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tech.html">Tech</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="sports.html">Sports</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="entertainment.html">Entertainment</a>
-          </li>
-        </ul>
+      <!-- Main Logo Section -->
+      <div class="text-center py-3">
+        <h1 class="navbar-brand fw-bold fs-1 mb-0">
+          <a href="../index.html" class="text-decoration-none text-dark">Khabarchi</a>
+        </h1>
+        <p class="text-muted small mb-0">Breaking News • In-depth Analysis • Current Affairs</p>
+      </div>
+      
+      <!-- Categories Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="politics.html">Politics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="business.html">Business</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="tech.html">Tech</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-semibold" href="sports.html">Sports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="entertainment.html">Entertainment</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Search Form (visible on larger screens) -->
+        <form class="d-none d-lg-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search sports news..." aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </nav>
+      
+      <!-- Mobile Search (visible on smaller screens) -->
+      <div class="d-lg-none border-top pt-2 pb-2">
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search sports news..." aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
+          <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
         </form>
       </div>
     </div>
-  </nav>
+  </header>
 
   <header class="bg-primary text-white py-5">
     <div class="container">

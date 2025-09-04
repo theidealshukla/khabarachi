@@ -31,6 +31,7 @@ class NewsManager {
       'ai-tools-classrooms.md', 
       'cricket-series-victory.md',
       'india-asia-cup-victory.md',
+      'stock-market-rally-tech.md',
       'ecommerce-growth-surge.md',
       'director-latest-release.md',
       'state-polls-announcement.md'
