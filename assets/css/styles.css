@@ -15,58 +15,96 @@ html, body {
   background: var(--kc-bg);
 }
 
-/* Navigation Styles */
-.navbar-brand {
-  font-size: 1.8rem !important;
-  font-weight: 700 !important;
+/* Centered Header Styles */
+.centered-header {
+  background: white;
+  padding: 2rem 0 1rem;
+  border-bottom: 1px solid var(--kc-border);
+  text-align: center;
+}
+
+.brand-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--kc-text) !important;
-  text-decoration: none !important;
-  transition: color 0.3s ease;
+  color: var(--kc-text);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
-.navbar-brand:hover {
-  color: var(--kc-primary) !important;
+.brand-tagline {
+  color: var(--kc-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
-.nav-link {
+.centered-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.centered-nav .nav-link {
   font-weight: 500;
-  color: var(--kc-muted) !important;
-  padding: 0.5rem 1rem !important;
-  transition: color 0.3s ease;
+  color: var(--kc-muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--kc-primary) !important;
+.centered-nav .nav-link:hover,
+.centered-nav .nav-link.active {
+  color: var(--kc-primary);
+  border-bottom-color: var(--kc-primary);
 }
 
-.form-control {
-  border: 1px solid var(--kc-border);
-  border-radius: 0.375rem;
+.header-search {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
-.form-control:focus {
-  border-color: var(--kc-primary);
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+.header-search .search-form {
+  display: flex;
+  max-width: 400px;
+  width: 100%;
 }
 
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-  .navbar-brand {
-    font-size: 2rem !important;
+.header-search .form-control {
+  border-radius: 0.375rem 0 0 0.375rem;
+  border-right: none;
+}
+
+.header-search .btn {
+  border-radius: 0 0.375rem 0.375rem 0;
+  border-left: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .brand-logo {
+    font-size: 2rem;
   }
   
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 0 !important;
-    margin: 0.25rem 0;
-    text-align: center;
+  .centered-nav {
+    gap: 1rem;
+    justify-content: center;
   }
   
-  .navbar-toggler {
-    border: 2px solid var(--kc-border);
-    border-radius: 0.5rem;
+  .centered-nav .nav-link {
+    font-size: 0.85rem;
+  }
+  
+  .header-search .search-form {
+    max-width: 300px;
   }
 }
 

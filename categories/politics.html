@@ -16,57 +16,40 @@
 </head>
 
 <body>
-  <!-- Modern Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+  <!-- Centered Header -->
+  <header class="centered-header">
     <div class="container">
-      <a class="navbar-brand fw-bold fs-2 me-4" href="../index.html">
-        <span class="text-primary">Khabar</span>chi
-      </a>
+      <a href="../index.html" class="brand-logo">Khabarchi</a>
+      <p class="brand-tagline">News that matters</p>
       
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <nav class="centered-nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="politics.html" class="nav-link active">Politics</a>
+        <a href="business.html" class="nav-link">Business</a>
+        <a href="sports.html" class="nav-link">Sports</a>
+        <a href="tech.html" class="nav-link">Tech</a>
+        <a href="entertainment.html" class="nav-link">Entertainment</a>
+      </nav>
       
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active fw-medium" href="politics.html">Politics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="business.html">Business</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="sports.html">Sports</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="tech.html">Tech</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="entertainment.html">Entertainment</a>
-          </li>
-        </ul>
-        
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search politics..." aria-label="Search">
+      <div class="header-search">
+        <form class="search-form" role="search">
+          <input class="form-control" type="search" placeholder="Search politics..." aria-label="Search">
           <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
         </form>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <header class="bg-primary text-white py-5">
+  <header class="bg-light border-bottom py-5">
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../index.html" class="text-white-50">Home</a></li>
-          <li class="breadcrumb-item active text-white" aria-current="page">Politics</li>
+          <li class="breadcrumb-item"><a href="../index.html" class="text-muted">Home</a></li>
+          <li class="breadcrumb-item active text-dark" aria-current="page">Politics</li>
         </ol>
       </nav>
-      <h1 class="display-4 fw-bold mb-3">Politics</h1>
-      <p class="lead">Stay informed with the latest political developments, policy updates, and electoral news from India and around the world.</p>
+      <h1 class="display-4 fw-bold mb-3 text-dark">Politics</h1>
+      <p class="lead text-muted">Stay informed with the latest political developments, policy updates, and electoral news from India and around the world.</p>
     </div>
   </header>
 
