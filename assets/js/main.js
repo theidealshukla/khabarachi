@@ -306,7 +306,7 @@ class NewsManager {
       const categoryName = Array.isArray(article.category) ? article.category[0] : article.category;
       breadcrumb.innerHTML = `
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="index.html#${categoryName}">${categoryName}</a></li>
+        <li class="breadcrumb-item"><a href="categories/${categoryName.toLowerCase()}.html">${categoryName}</a></li>
         <li class="breadcrumb-item active" aria-current="page">Article</li>
       `;
     }

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business — Khabarchi</title>
+  <meta name="description" content="Latest business news, market updates, startup stories, and economic analysis from India and around the world.">
+  <link rel="canonical" href="https://khabarchi.com/categories/business">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="../index.html">Khabarchi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="politics.html">Politics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="business.html">Business</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tech.html">Tech</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sports.html">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="entertainment.html">Entertainment</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search business news..." aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white py-5">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html" class="text-white-50">Home</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">Business</li>
+        </ol>
+      </nav>
+      <h1 class="display-4 fw-bold mb-3">Business</h1>
+      <p class="lead">Stay ahead with the latest business news, market insights, startup stories, and economic developments from India and global markets.</p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <!-- Featured Business News -->
+    <section class="mb-5">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="h3 fw-bold mb-0">Featured Business News</h2>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort by Latest
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li><a class="dropdown-item" href="#" data-sort="latest">Latest</a></li>
+            <li><a class="dropdown-item" href="#" data-sort="oldest">Oldest</a></li>
+            <li><a class="dropdown-item" href="#" data-sort="featured">Featured First</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div id="featuredBusiness" class="row g-4">
+        <!-- Featured articles will be loaded here by JavaScript -->
+        <div class="col-12 text-center py-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-3 text-muted">Loading business news...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Business Articles -->
+    <section>
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="h3 fw-bold mb-0">All Business News</h2>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-primary btn-sm active" data-filter="all">All</button>
+          <button class="btn btn-outline-primary btn-sm" data-filter="markets">Markets</button>
+          <button class="btn btn-outline-primary btn-sm" data-filter="startups">Startups</button>
+          <button class="btn btn-outline-primary btn-sm" data-filter="economy">Economy</button>
+          <button class="btn btn-outline-primary btn-sm" data-filter="finance">Finance</button>
+        </div>
+      </div>
+
+      <div id="allBusiness" class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <!-- All business articles will be loaded here by JavaScript -->
+        <div class="col-12 text-center py-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-3 text-muted">Loading all business articles...</p>
+        </div>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="text-center mt-5">
+        <button id="loadMoreBtn" class="btn btn-outline-primary" style="display: none;">
+          Load More Articles
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3">Khabarchi</h5>
+          <p class="text-white-50">Your trusted source for breaking news, in-depth analysis, and comprehensive coverage of current affairs.</p>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h6 class="fw-bold mb-3">Categories</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-white-50 text-decoration-none" href="politics.html">Politics</a></li>
+            <li><a class="text-white-50 text-decoration-none" href="business.html">Business</a></li>
+            <li><a class="text-white-50 text-decoration-none" href="tech.html">Tech</a></li>
+            <li><a class="text-white-50 text-decoration-none" href="sports.html">Sports</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h6 class="fw-bold mb-3">Company</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-white-50 text-decoration-none" href="#">About Us</a></li>
+            <li><a class="text-white-50 text-decoration-none" href="#">Contact</a></li>
+            <li><a class="text-white-50 text-decoration-none" href="#">Privacy Policy</a></li>
+            <li><a class="text-white-50 text-decoration-none" href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Follow Us</h6>
+          <div class="d-flex gap-3">
+            <a class="text-white-50" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a class="text-white-50" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a class="text-white-50" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="text-white-50" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="text-white-50 my-4">
+      <div class="text-center">
+        <p class="text-white-50 small mb-0">&copy; <span id="year">2024</span> Khabarchi. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/category-page.js"></script>
+</body>
+
+</html>

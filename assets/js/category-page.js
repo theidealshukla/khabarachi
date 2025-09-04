@@ -55,7 +55,7 @@ class CategoryPageManager {
   // Load single article from markdown file
   async loadSingleArticle(filename) {
     try {
-      const response = await fetch(`articles/${filename}`);
+      const response = await fetch(`../articles/${filename}`);
       if (!response.ok) throw new Error(`Failed to load ${filename}`);
       
       const content = await response.text();
@@ -229,7 +229,7 @@ class CategoryPageManager {
 
       return `
         <div class="col-md-6 col-lg-4">
-          <a href="article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
+          <a href="../article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
             <img src="${article.image}" class="card-img-top object-cover" alt="${article.title}" style="height: 200px;">
             <div class="card-body">
               <span class="badge bg-primary mb-2">${categoryName}</span>
@@ -292,7 +292,7 @@ class CategoryPageManager {
 
       return `
         <div class="col">
-          <a href="article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
+          <a href="../article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
             <img src="${article.image}" class="card-img-top object-cover" alt="${article.title}" style="height: 200px;">
             <div class="card-body d-flex flex-column">
               <span class="badge bg-outline-primary text-primary mb-2 align-self-start">${categoryName}</span>
