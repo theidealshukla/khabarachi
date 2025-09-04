@@ -21,7 +21,13 @@ class CategoryPageManager {
   getBasePath() {
     // For GitHub Pages, the pattern is: username.github.io/repository-name
     if (window.location.hostname.includes('github.io')) {
-      return '/khabarchi';
+      // Extract repository name from pathname or use default
+      const pathParts = window.location.pathname.split('/').filter(part => part);
+      if (pathParts.length > 0 && pathParts[0] === 'khabarchi') {
+        return '/khabarchi';
+      }
+      // Fallback: try to detect from URL
+      return window.location.pathname.includes('khabarchi') ? '/khabarchi' : '';
     }
     return '';
   }

@@ -1,0 +1,44 @@
+# GitHub Pages configuration for Khabarchi
+title: Khabarchi
+description: News that matters
+baseurl: "/khabarchi"
+url: "https://theidealshukla.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Include markdown files
+include:
+  - _config.yml
+  - README.md
+  - articles/
+
+# Exclude files
+exclude:
+  - .git/
+  - .gitignore
+  - README.md
+  - node_modules/
+  - package.json
+  - package-lock.json
+
+# Plugin settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections
+collections:
+  articles:
+    output: false
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"

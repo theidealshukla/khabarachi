@@ -4,6 +4,27 @@ class NewsManager {
     this.articles = [];
     this.categories = ['politics', 'business', 'sports', 'tech', 'entertainment', 'education', 'economics', 'elections'];
     this.isLoading = false;
+    
+    // Debug info
+    console.log('NewsManager initialized');
+    console.log('Current URL:', window.location.href);
+    console.log('Hostname:', window.location.hostname);
+    console.log('Pathname:', window.location.pathname);
+  }
+
+  // Get the correct base path for GitHub Pages
+  getBasePath() {
+    // For GitHub Pages, the pattern is: username.github.io/repository-name
+    if (window.location.hostname.includes('github.io')) {
+      // Extract repository name from pathname or use default
+      const pathParts = window.location.pathname.split('/').filter(part => part);
+      if (pathParts.length > 0 && pathParts[0] === 'khabarchi') {
+        return '/khabarchi';
+      }
+      // Fallback: try to detect from URL
+      return window.location.pathname.includes('khabarchi') ? '/khabarchi' : '';
+    }
+    return '';
   }
 
   // Initialize the news manager
