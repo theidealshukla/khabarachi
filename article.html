@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -14,28 +14,29 @@
   <link href="assets/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+  <!-- Centered Header -->
+  <header class="centered-header">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Khabarchi</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html#politics">Politics</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#business">Business</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#sports">Sports</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#tech">Tech</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#entertainment">Entertainment</a></li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search news" aria-label="Search">
-          <button class="btn btn-dark" type="submit"><i class="bi bi-search"></i></button>
+      <a href="index.html" class="brand-logo">Khabarchi</a>
+      <p class="brand-tagline">News that matters</p>
+      
+      <nav class="centered-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="categories/politics.html" class="nav-link">Politics</a>
+        <a href="categories/business.html" class="nav-link">Business</a>
+        <a href="categories/sports.html" class="nav-link">Sports</a>
+        <a href="categories/tech.html" class="nav-link">Tech</a>
+        <a href="categories/entertainment.html" class="nav-link">Entertainment</a>
+      </nav>
+      
+      <div class="header-search">
+        <form class="search-form" role="search">
+          <input class="form-control" type="search" placeholder="Search news..." aria-label="Search">
+          <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
         </form>
       </div>
     </div>
-  </nav>
+  </header>
 
   <!-- Article Header -->
   <header class="container py-4 py-md-5">

@@ -56,7 +56,9 @@ class CategoryPageManager {
   // Load single article from markdown file
   async loadSingleArticle(filename) {
     try {
-      const response = await fetch(`../articles/${filename}`);
+      // Use absolute path that works both locally and on GitHub Pages
+      const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+      const response = await fetch(`${basePath}/articles/${filename}`);
       if (!response.ok) throw new Error(`Failed to load ${filename}`);
       
       const content = await response.text();
@@ -222,6 +224,8 @@ class CategoryPageManager {
       return;
     }
 
+    const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+
     container.innerHTML = displayArticles.map(article => {
       const categoryName = Array.isArray(article.category) ? article.category[0] : article.category;
       const publishDate = new Date(article.date).toLocaleDateString('en-US', { 
@@ -230,7 +234,7 @@ class CategoryPageManager {
 
       return `
         <div class="col-md-6 col-lg-4">
-          <a href="../article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
+          <a href="${basePath}/article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
             <img src="${article.image}" class="card-img-top object-cover" alt="${article.title}" style="height: 200px;">
             <div class="card-body">
               <span class="badge bg-primary mb-2">${categoryName}</span>
@@ -291,9 +295,11 @@ class CategoryPageManager {
         year: 'numeric', month: 'short', day: 'numeric' 
       });
 
+      const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+
       return `
         <div class="col">
-          <a href="../article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
+          <a href="${basePath}/article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
             <img src="${article.image}" class="card-img-top object-cover" alt="${article.title}" style="height: 200px;">
             <div class="card-body d-flex flex-column">
               <span class="badge bg-outline-primary text-primary mb-2 align-self-start">${categoryName}</span>

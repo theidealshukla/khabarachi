@@ -51,7 +51,9 @@ class NewsManager {
   // Load single article from markdown file
   async loadSingleArticle(filename) {
     try {
-      const response = await fetch(`articles/${filename}`);
+      // Use absolute path that works both locally and on GitHub Pages
+      const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+      const response = await fetch(`${basePath}/articles/${filename}`);
       if (!response.ok) throw new Error(`Failed to load ${filename}`);
       
       const content = await response.text();
@@ -190,6 +192,8 @@ class NewsManager {
     const mainFeatured = featured[0];
     const sideFeatured = featured.slice(1, 4);
 
+    const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+
     // Update main featured article
     const mainFeaturedEl = document.querySelector('.col-12.col-lg-7 .card');
     if (mainFeaturedEl) {
@@ -201,7 +205,7 @@ class NewsManager {
           <p class="text-white-50 small mb-0">By ${mainFeatured.author} · ${mainFeatured.readTime || '5 min read'}</p>
         </div>
       `;
-      mainFeaturedEl.href = `article.html?slug=${mainFeatured.slug}`;
+      mainFeaturedEl.href = `${basePath}/article.html?slug=${mainFeatured.slug}`;
     }
 
     // Update side featured articles
@@ -209,7 +213,7 @@ class NewsManager {
     if (sideContainer && sideFeatured.length > 0) {
       sideContainer.innerHTML = sideFeatured.map(article => `
         <div class="col-12">
-          <a class="card hover-lift text-reset text-decoration-none" href="article.html?slug=${article.slug}">
+          <a class="card hover-lift text-reset text-decoration-none" href="${basePath}/article.html?slug=${article.slug}">
             <div class="row g-0">
               <div class="col-4">
                 <img class="img-fluid rounded-start h-100 object-cover" src="${article.image}" alt="${article.title}">
@@ -236,9 +240,11 @@ class NewsManager {
     const trendingContainer = document.querySelector('.row.g-4.row-cols-1.row-cols-sm-2.row-cols-lg-4');
     
     if (trendingContainer && trending.length > 0) {
+      const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+      
       trendingContainer.innerHTML = trending.map(article => `
         <div class="col">
-          <a href="article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
+          <a href="${basePath}/article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
             <img src="${article.image}" class="card-img-top object-cover" alt="${article.title}">
             <div class="card-body">
               <span class="badge bg-secondary-subtle text-secondary-emphasis mb-2">
@@ -254,6 +260,8 @@ class NewsManager {
 
   // Load category sections
   loadCategorySections() {
+    const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+    
     this.categories.forEach(category => {
       const articles = this.getByCategory(category).slice(0, 3);
       const sectionEl = document.querySelector(`#${category}`);
@@ -263,7 +271,7 @@ class NewsManager {
         if (container) {
           container.innerHTML = articles.map(article => `
             <div class="col">
-              <a href="article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
+              <a href="${basePath}/article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
                 <img src="${article.image}" class="card-img-top object-cover" alt="${article.title}">
                 <div class="card-body">
                   <h5 class="card-title">${article.title}</h5>
@@ -298,6 +306,8 @@ class NewsManager {
 
   // Display full article
   displayArticle(article) {
+    const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+    
     // Update page title
     document.title = `${article.title} — Khabarchi`;
     
@@ -306,8 +316,8 @@ class NewsManager {
     if (breadcrumb) {
       const categoryName = Array.isArray(article.category) ? article.category[0] : article.category;
       breadcrumb.innerHTML = `
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="categories/${categoryName.toLowerCase()}.html">${categoryName}</a></li>
+        <li class="breadcrumb-item"><a href="${basePath}/index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="${basePath}/categories/${categoryName.toLowerCase()}.html">${categoryName}</a></li>
         <li class="breadcrumb-item active" aria-current="page">Article</li>
       `;
     }
@@ -387,11 +397,13 @@ class NewsManager {
       return currentCategories.some(cat => articleCategories.includes(cat));
     }).slice(0, 2);
     
+    const basePath = window.location.pathname.includes('/khabarachi/') ? '/khabarachi' : '';
+    
     const relatedContainer = document.querySelector('.row.g-4.row-cols-1.row-cols-sm-2');
     if (relatedContainer && related.length > 0) {
       relatedContainer.innerHTML = related.map(article => `
         <div class="col">
-          <a href="article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
+          <a href="${basePath}/article.html?slug=${article.slug}" class="card h-100 hover-lift text-reset text-decoration-none">
             <img src="${article.image}" class="card-img-top object-cover" alt="${article.title}">
             <div class="card-body">
               <h6 class="card-title">${article.title}</h6>
