@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khabarchi — News that matters</title>
+  <meta name="description" content="Khabarchi is a modern news portal covering Politics, Business, Sports, Tech, and Entertainment." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='58' font-size='60' text-anchor='middle' fill='%23fff'>K</text></svg>">
+</head>
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Khabarchi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#politics">Politics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#business">Business</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sports">Sports</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tech">Tech</a></li>
+          <li class="nav-item"><a class="nav-link" href="#entertainment">Entertainment</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search news" aria-label="Search">
+          <button class="btn btn-dark" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Featured Section -->
+  <section class="py-4 bg-light border-bottom">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-12 col-lg-7">
+          <a class="card card-cover h-100 text-reset text-decoration-none" href="article.html">
+            <img class="featured-img" src="https://picsum.photos/seed/feature/1200/700" alt="Featured story">
+            <div class="card-img-overlay d-flex flex-column justify-content-end p-4 p-md-5 gradient-overlay">
+              <span class="badge bg-danger mb-2">Breaking</span>
+              <h2 class="card-title text-white lh-sm">Major policy shift expected as leaders meet for high-stakes talks</h2>
+              <p class="text-white-50 small mb-0">By Staff Reporter · 12 min read</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="row g-4">
+            <div class="col-12">
+              <a class="card hover-lift text-reset text-decoration-none" href="article.html">
+                <div class="row g-0">
+                  <div class="col-4"><img class="img-fluid rounded-start h-100 object-cover" src="https://picsum.photos/seed/side1/400/300" alt=""></div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <span class="badge bg-primary-subtle text-primary-emphasis mb-2">Politics</span>
+                      <h5 class="card-title">Parliament session sees heated debate on reforms</h5>
+                      <p class="card-text text-secondary small">Key amendments spark cross-party discussion</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12">
+              <a class="card hover-lift text-reset text-decoration-none" href="article.html">
+                <div class="row g-0">
+                  <div class="col-4"><img class="img-fluid rounded-start h-100 object-cover" src="https://picsum.photos/seed/side2/400/300" alt=""></div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <span class="badge bg-success-subtle text-success-emphasis mb-2">Business</span>
+                      <h5 class="card-title">Markets rally as inflation cools; IT leads gains</h5>
+                      <p class="card-text text-secondary small">Analysts see room for cautious optimism</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12">
+              <a class="card hover-lift text-reset text-decoration-none" href="article.html">
+                <div class="row g-0">
+                  <div class="col-4"><img class="img-fluid rounded-start h-100 object-cover" src="https://picsum.photos/seed/side3/400/300" alt=""></div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <span class="badge bg-warning-subtle text-warning-emphasis mb-2">Tech</span>
+                      <h5 class="card-title">Next-gen chips promise big efficiency gains</h5>
+                      <p class="card-text text-secondary small">Foundries gear up for mass production</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h3 class="section-title mb-0">Trending</h3>
+        <a href="#" class="text-decoration-none">View all</a>
+      </div>
+      <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+        <!-- 4 trending cards -->
+        <div class="col">
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/tr1/600/400" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <span class="badge bg-secondary-subtle text-secondary-emphasis mb-2">World</span>
+              <h5 class="card-title">Global summit charts roadmap for climate action</h5>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/tr2/600/400" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <span class="badge bg-info-subtle text-info-emphasis mb-2">Tech</span>
+              <h5 class="card-title">AI tools see mainstream adoption in classrooms</h5>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/tr3/600/400" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <span class="badge bg-danger-subtle text-danger-emphasis mb-2">Sports</span>
+              <h5 class="card-title">Thriller finish sees underdogs clinch title</h5>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/tr4/600/400" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <span class="badge bg-success-subtle text-success-emphasis mb-2">Business</span>
+              <h5 class="card-title">Startup unicorn lists at strong premium</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Sections -->
+  <section id="politics" class="py-4 border-top">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h3 class="section-title mb-0">Politics</h3>
+        <a href="#" class="text-decoration-none">More</a>
+      </div>
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <!-- Repeatable card -->
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/pol1/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Coalition announces blueprint for governance</h5>
+              <p class="card-text text-secondary">Roadmap focuses on transparency and growth</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/pol2/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">State polls likely to be announced next week</h5>
+              <p class="card-text text-secondary">Election commission signals timeline</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/pol3/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Key bill passes with rare unanimity</h5>
+              <p class="card-text text-secondary">Observers hail collaborative spirit</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="business" class="py-4 border-top">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h3 class="section-title mb-0">Business</h3>
+        <a href="#" class="text-decoration-none">More</a>
+      </div>
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/biz1/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Banks roll out new SME lending products</h5>
+              <p class="card-text text-secondary">Lower rates, faster approvals promised</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/biz2/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Oil prices steady amid supply outlook</h5>
+              <p class="card-text text-secondary">Markets weigh demand signals</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/biz3/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">E-commerce growth outpaces retail average</h5>
+              <p class="card-text text-secondary">Festive season sales surge</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sports" class="py-4 border-top">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h3 class="section-title mb-0">Sports</h3>
+        <a href="#" class="text-decoration-none">More</a>
+      </div>
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/sp1/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Captain shines as team secures series win</h5>
+              <p class="card-text text-secondary">Fans celebrate across the country</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/sp2/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Youngster breaks national record</h5>
+              <p class="card-text text-secondary">A new star on the horizon</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/sp3/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">League announces revamped schedule</h5>
+              <p class="card-text text-secondary">More primetime fixtures</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech" class="py-4 border-top">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h3 class="section-title mb-0">Tech</h3>
+        <a href="#" class="text-decoration-none">More</a>
+      </div>
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/te1/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">New OS update brings privacy features</h5>
+              <p class="card-text text-secondary">Rollout begins for flagship devices</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/te2/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Cloud costs drop as competition heats up</h5>
+              <p class="card-text text-secondary">Enterprises eye multi-cloud</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/te3/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Developers embrace edge computing</h5>
+              <p class="card-text text-secondary">Latency gains for real-time apps</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="entertainment" class="py-4 border-top">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h3 class="section-title mb-0">Entertainment</h3>
+        <a href="#" class="text-decoration-none">More</a>
+      </div>
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/en1/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Festival line-up features global stars</h5>
+              <p class="card-text text-secondary">Tickets sell out in hours</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/en2/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Critics hail director's latest release</h5>
+              <p class="card-text text-secondary">A masterclass in storytelling</p>
+            </div>
+          </a>
+        </div>
+        <div class="col"> 
+          <a href="article.html" class="card h-100 hover-lift text-reset text-decoration-none">
+            <img src="https://picsum.photos/seed/en3/600/360" class="card-img-top object-cover" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Streaming platform debuts new docuseries</h5>
+              <p class="card-text text-secondary">True crime captivates audiences</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-5 pt-5 border-top bg-white">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h5 class="fw-bold">Khabarchi</h5>
+          <p class="text-secondary">Independent journalism with clarity and context. Politics, business, sports, tech and culture — all in one place.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase small fw-bold">About</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-decoration-none" href="#">Our Story</a></li>
+            <li><a class="text-decoration-none" href="#">Careers</a></li>
+            <li><a class="text-decoration-none" href="#">Advertise</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase small fw-bold">Contact</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-decoration-none" href="#">Newsroom</a></li>
+            <li><a class="text-decoration-none" href="#">Press</a></li>
+            <li><a class="text-decoration-none" href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h6 class="text-uppercase small fw-bold">Follow</h6>
+          <div class="d-flex gap-3 fs-5">
+            <a class="text-secondary" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a class="text-secondary" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a class="text-secondary" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="text-secondary" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center py-3 mt-3 border-top small text-secondary">
+        <span>© <span id="year"></span> Khabarchi. All rights reserved.</span>
+        <a class="text-decoration-none" href="#">Privacy & Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

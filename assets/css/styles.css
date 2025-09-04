@@ -1,0 +1,53 @@
+/* Base Typography & Colors */
+:root {
+  --kc-bg: #f8f9fb;
+  --kc-text: #111418;
+  --kc-muted: #6c757d;
+  --kc-card: #ffffff;
+  --kc-border: #e5e7eb;
+  --kc-accent: #111418;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--kc-text);
+  background: var(--kc-bg);
+}
+
+.section-title { font-weight: 700; letter-spacing: -0.02em; }
+
+/* Cards */
+.card { border: 1px solid var(--kc-border); border-radius: 0.75rem; overflow: hidden; background: var(--kc-card); }
+.card-title { letter-spacing: -0.01em; }
+
+.object-cover { object-fit: cover; }
+
+.hover-lift { transition: transform .2s ease, box-shadow .2s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(17,20,24,.08); }
+
+/* Featured */
+.card-cover { position: relative; border: none; }
+.featured-img { width: 100%; height: 420px; object-fit: cover; border-radius: .75rem; }
+.gradient-overlay { background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.1)); border-radius: .75rem; }
+
+@media (min-width: 992px) {
+  .featured-img { height: 520px; }
+}
+
+/* Nav */
+.navbar-brand { letter-spacing: -0.02em; }
+.nav-link { font-weight: 500; }
+
+/* Article */
+.article-content { font-size: 1.05rem; line-height: 1.9; }
+.article-content h3 { margin-top: 2rem; margin-bottom: .75rem; }
+
+/* Utilities */
+.badge.text-bg-light { background: #f3f4f6 !important; color: #111 !important; }
+
+/* Footer */
+footer .list-unstyled a { color: var(--kc-text); opacity: .8; }
+footer .list-unstyled a:hover { opacity: 1; }
+
+/* Minor tweaks */
+.figure-img { box-shadow: 0 8px 24px rgba(17,20,24,.06); }
